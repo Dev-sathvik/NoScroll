@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Enroll
+{% endblock %}
+
+{% block main %}
+         {% if flag == True %}
+        <div class="text-primary">
+        <h2 class="enroll" >Enroll</h2></div>
+    <div class="container">
+        <form action="/enroll" method="post">
+            <fieldset>
+              <div>
+                <label for="name" class="form-label mt-4">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+
+                <label for="username" class="form-label mt-4">Username</label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username(Instagram)">
+
+                <label for="motivation" class="form-label mt-4">Motivation</label>
+                <input type="text" class="form-control" name="motivation" id="motivation" placeholder="Enter Your motivation for enrolling">
+
+                <label for="time" class="form-label mt-4">Average time spent scrolling per day in minutes (check your phone's settings)</label>
+                <input type="text" class="form-control" name="time" id="time" placeholder="Enter average time consumption">
+
+                <button type="submit" class="btn btn-success" style="margin-top:30px;">Get enrolled!</button>
+                <br>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your details.</small>
+              </div>
+            </fieldset>
+        </form>
+    </div>
+    {% else %}
+    <h3 class = "enroll">You are already enrolled</h3>
+    <p class="mb-0">Even though i don't recommand you to quit, it is important that you stay honest. If you are unable to stop scrolling, please quit and come back again <strong>stronger</strong>.</p>
+    <figure class>
+        <blockquote class="blockquote">
+          <p class="mb-0" style="background-color:#AFF9C9; margin: 0 0 75% 0">{{ motivation["motiv"] }}</p>
+          </blockquote>
+          <figcaption  class="blockquote-footer">
+          <cite title="Source Title">{{ motivation["auth"] }}</cite>
+          <br>
+          Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
+          </br>
+        </figcaption>
+      </figure>
+    <form action="/exit" method="post">
+        <button type="submit" name="exit" class="btn btn-danger" style="margin-top:10px;">I Quit</button>
+    </form>
+    {% endif %}
+{% endblock %}

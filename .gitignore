@@ -1,0 +1,5 @@
+__pycache__
+.venv
+flask_session
+cs50_cool.PNG
+cs50_funny.PNG

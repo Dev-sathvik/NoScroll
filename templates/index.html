@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<div class="list-group">
+    <a href="" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-center">
+        <h5 class="mb-1"><u><b>What's This?</b></u></h5>
+        <small></small>
+      </div>
+      <div class="d-flex w-100 justify-content-center">
+      <p class="mb-5 "><b>A Tool for improving your productivity by restricting consumption of short video formates like reels.</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+          <div class="card-header">Step 1</div>
+          <div class="card-body">
+            <h4 class="card-title">Enroll</h4>
+            <p class="card-text">Navigate to "Enroll" to be a part of the community of noscrollers!.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+          <div class="card-header">Step 2</div>
+          <div class="card-body">
+            <h4 class="card-title">Provide your motive.</h4>
+            <p class="card-text">Enter your strong reason that leads you to stop scrolling.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+          <div class="card-header">Step 3</div>
+          <div class="card-body">
+            <h4 class="card-title">Watch your people</h4>
+            <p class="card-text">See all the people like you who have enrolled.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Why?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" >
+        <div class="accordion-body">
+          <strong>I have always wanted to stop my doomscrolling habit, but it was quite hard. It would reduce my productivity and affect my daily chores. This is why i imagined a platform
+          where one could meet similar kind of people experiencing the same issue as mine. This would motivate me to stop scrolling knowing that there are people just like me.</strong>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          How?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" >
+        <div class="accordion-body">
+          <strong>It works by giving you a option to enroll yourself to noscroll platform and see other like minded people that have enrolled already. You would be able to see a strong community of noscrollers who have promised themselves not to scroll anymore.</strong>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Features!!
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <ul>
+            <li>Watch other enrolled people like you.</li>
+            <li>See the statistics of the noscroll platform</li>
+            <li>Track your time saving and streak</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
+      <span class="badge bg-primary rounded-pill"></span>
+    </li>
+    <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+      <span class="badge bg-primary rounded-pill"></span>
+    </li>
+    <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
+      <span class="badge bg-primary rounded-pill"></span>
+    </li>
+    <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center" style="margin-bottom:2em">
+      <span class="badge bg-primary rounded-pill"></span>
+    </li>
+  </ul>
+  <div id="community" style="display: none">
+  <h4 class="enroll">NoScroll community</h4>
+  <table class="list-group-item list-group-item-success d-flex justify-content-center" style="margin:2% 30%; padding: 2em 2em 0 0">
+    <tbody>
+    {% for row in rows %}
+      <tr><td>Name: {{ row["name"] }}</td></tr>
+      <tr><td>Username: {{ row["username"] }}</td></tr>
+      <tr><td>Motivation: {{ row["motivation"] }}</td></tr>
+      <tr><td>Enrolled Date: {{ row["enroll_date"] }}</td></tr>
+      <tr><td><hr></td</tr>
+    {% endfor %}
+   </tbody>
+  </table>
+  </div>
+  <div class="d-flex justify-content-center">
+   <button class="btn btn-dark" id="showButton">Show/Hide community</button>
+  </div>
+  <div class="text-center">
+    <footer class="text-center" style="background-color: #2c3e50; color:white; margin-top: 2em">Copyrights &copy Sathvik P</footer>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#showButton").click(function() {
+        $("#community").slideToggle();
+      });
+    });
+  </script>
+{% endblock %}

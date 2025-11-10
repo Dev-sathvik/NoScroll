@@ -1,0 +1,68 @@
+/* Size for brand */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.list-group {
+    margin-top: 20px; /* Adjust the value as needed */
+  }
+
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+
+.special_para {
+    font-size: 1.1rem;
+    color: #8e44ad;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-left: 5px solid #8e44ad;
+    margin: 10px 0;
+}
+
+.enroll {
+    text-align:center;
+    padding: 0.5em;
+    background-color:#FFEAEE;
+    margin:2% 40%;
+    border-radius: 10px;
+
+}
+
+.even {
+    background-color: #CCFFCB
+    !important;
+}
+
+.odd {
+    background-color: #E6E6E6
+    !important;
+}
+
+.register {
+    text-align:center;
+    padding: 0.5em;
+    background-color:#00FFC5;
+    margin:3% 40%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.login {
+    text-align:center;
+    padding: 0.5em;
+    background-color:#00FFC5;
+    margin:3% 40%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.pleaseenroll {
+    text-align:center;
+    font-family: Arial, sans-serif;
+
+}

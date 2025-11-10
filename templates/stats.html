@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Statistics
+{% endblock %}
+
+{% block main %}
+   <div>
+    <h2 class="enroll">Statistics</h2>
+    <table class="table table-hover">
+        <tr><td class="even"><strong>Total Registered:</strong> <span  id = "first"></span></td></tr>
+        <tr><td class="even"><strong>Total Enrolled:</strong> <span  id = "second"></span></td></tr>
+        <tr><td class="even"><strong>Enrolled today:</strong> <span  id = "third"></span></td></tr>
+    </table>
+   </div>
+   <script>
+    function updateField(id, target) {
+        let count = 0;
+        document.getElementById(id).innerText = count;
+        let interval = setInterval(() => {
+            if (count < target) {
+                count++;
+                document.getElementById(id).innerText = count;
+            } else {
+                clearInterval(interval);
+            }
+        }, 200); 
+    }
+
+    updateField("first",  "{{ users }}" );
+    updateField("second", "{{ enrolled }}" );
+    updateField("third", "{{ today }}");
+   </script>
+{% endblock %}
