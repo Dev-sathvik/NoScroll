@@ -1,5 +1,6 @@
 # NoScroll
-<<<<<<< HEAD
+A Web Application which focuses on reducing excessive scrolling on reels by forming a community of users who want to stay focused. Built as part of the Harvard CS50x course final project.
+
 #### Video Demo:  <[URL HERE](https://youtu.be/8WKmfnCfBfk)>
 #### Description:
 
@@ -53,5 +54,5 @@ I used the flask framework to handle server requests and used HTML, CSS, Javascr
 Time saved calculation is done by multiplying the streak with the time spent scrolling from the database.
 =======
 
-A Web Application which focuses on reducing excessive scrolling on reels by forming a community of users who want to stay focused. Built as part of the Harvard CS50x course final project.
->>>>>>> 2f66ac3745979f3bf99fe02ac52eb4774d83aafd
+
+
